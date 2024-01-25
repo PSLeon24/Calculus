@@ -13,6 +13,7 @@
 
     - 이를 위해서 함수의 도함수를 찾는 즉, 미분을 하면 됨. 미분을 한다는 것은 순간변화율을 찾는 것
       - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/f4ba1a85-52e9-47aa-ad41-a76bdf172c94)
+      - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/8a5f2b33-cd1b-4ad9-9f81-b84f866505e3)
 
     - 위와 같이 곡선이 있을 때 특정 지점에서 특정 지점까지의 거리가 h라고 가정하면 극한의 개념을 활용해서 다음과 같이 도함수를 구할 수 있음
       - fomular
