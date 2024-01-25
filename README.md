@@ -2,8 +2,8 @@
 
 ## 1. Single variable calculus
 - Necessity
-  - Differentiation(미분): 미분은 입력의 변화에 따라 출력이 얼마나 변화되는지 이해하는데 도움을 줌
-    - 딥 러닝에서 순간적으로 값을 조금씩 learning rate를 변화시키며 최적의 솔루션을 찾는데 활용 → 이는 최적화(optimization)의 핵심 개념
+  - Differentiation(미분): 미분은 입력의 변화에 따라 출력이 얼마나 변화되는지 이해하는데 도움을 줌 → 값의 변화로부터 정보를 추출하는 방법
+    - 딥러닝에서 순간적으로 값을 조금씩 learning rate를 변화시키며 최적의 솔루션을 찾는데 활용 → 이는 최적화(optimization)의 핵심 개념
   - Integration(적분): 적분은 특정 지점 간의 입력의 변화가 미치는 영향을 이해하는 데 도움을 줌
 - Derivatives
   - Core Concepts
@@ -44,15 +44,42 @@
            - 도함수가 0이면서 d^2/dx^2 f(t) < 0인 경우, f(x)는 x=t일 때 극솟값
         3. d^2/dx^2 f(t) = 0: 변곡점을 구할 때도 쓰이지만 아무런 정보가 없을 수도 있음(변곡점인 것을 구하려면 주변의 도함수 값을 확인해봐야 함)
     - Product rule
-      - 곱의 법칙
+      - 곱의 미분법은 y = f(x)g(x)와 같이 두 함수의 곱으로 이루어진 식에 적용하는 미분법
+      - F'(x) = f(x)g'(x) + f'(x)g(x) - 각각 하나씩 미분해서 더하기
     - Quotient rule
-      - 몫의 미분법
-    - Chain rule
-      - 연쇄 법칙
+      - 몫의 미분법은 y = f(x)/g(x)와 같이 분수식으로 된 함수에 적용하는 미분법, 곱의 공식을 적용
+      - F'(x) = (f(x)g'(x) - f'(x)g(x)) / g(x)^2
+      - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/84a20bdd-86b8-4e1c-a88e-77dcf7b95c3d)
+
+    - Chain rule(합성함수의 미분)
+      - 연쇄 법칙은 합성함수를 구성하는 각 함수의 미분의 곱으로 나타낼수 있다는 것
+        - F'(x) = f'(g(x))g'(x)
+        - 합성함수의 미분은 바깥함수(outer function)를 먼저 미분한 다음, 다시 안쪽 함수 (inner function)을 미분하여 곱하면 됨
+        - 미분과 적분 전반에 걸쳐 사용되는 매우 중요한 미분법으로 여러 개의 함수가 미분가능하면 여러 개의 함수를 합성한 합성함수도 항상 미분이 가능하다는 것을 보여줌
+        -  연쇄 법칙은 딥러닝의 Neural Network에서 사용되는 중요한 개념
+        - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/19d79e1d-914e-4a68-9277-e907bd45ec9a)
+        - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/b0725bab-730a-4a8e-b0c8-1adae07928e4)
+
     - Antiderivative
-      - 부정적분
+      - 부정적분은 이름 그대로 미분식 f'(x)를 통해 원래의 함수 f(x)를 찾는 역과정(마치 reverse engineering과 흡사한 과정)
+      - 아래 이미지는 몇 개의 중요한 함수들의 부정적분을 정리한 표, 부정적분 후에는 임의의 상수 c를 붙여줘야 함
+      - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/7fb38218-e093-4d20-a527-54b9fd94c83c)
+
 
 - Integrals
+  - 적분은 미분과 정반대로 곡선 아래의 면적을 찾는 것, denoted by ∫(a,b)f(x)
+    - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/7761d2e8-bb58-46df-aa20-309a011a59b1)
+  - 예를 들어 곡선 형태의 함수 f(x)가 있을 때, x가 a~b까지의 곡선 아래 면적은 아래와 같이 표기
+    - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/2490b65d-e92f-4de6-b062-457e640b47e2)
+  - 또한, 극한을 활용해서 아주 작은 부분들의 면적의 합을 구하여 아래와 같이 나타낼 수도 있음
+    - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/09e25e8c-5855-476a-8a40-78b8e890599a)
+    - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/0a0e7570-d05e-4c91-aa34-d3bf873b31cb)
+  - 수열의 규칙을 다루는 것은 적분을 구할 때 중요한 부분이고 깊게 이해하려면 수열의 규칙을 알아야 함
+    - <img src="https://github.com/PSLeon24/Calculus/assets/59058869/8df122ec-8eb5-4ad3-8ac1-836e7cd68cb8" height="400">
+  - 적분의 성질
+    - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/4a72a0be-2499-4852-8072-5f3df45f35f3)
+    - ![image](https://github.com/PSLeon24/Calculus/assets/59058869/5ee92af7-0efa-44b7-a731-593c3b0a0a6e)
+
   - The fundamental theorem of calculus
   - Substitution rule
   - Areas between curves
